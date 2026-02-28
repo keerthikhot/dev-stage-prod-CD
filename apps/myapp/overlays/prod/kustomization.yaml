@@ -1,0 +1,17 @@
+namespace: stage
+resources:
+  - ../../base
+  - namespace.yaml
+
+images:
+  - name: <ACCOUNT_ID>.dkr.ecr.ap-south-1.amazonaws.com/my-app
+    newTag: IMAGE_TAG
+
+patches:
+  - target:
+      kind: Deployment
+      name: my-app
+    patch: |
+      - op: replace
+        path: /spec/replicas
+        value: 2

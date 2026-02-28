@@ -1,0 +1,8 @@
+namespace: dev
+resources:
+  - ../../base
+  - namespace.yaml
+
+images:
+  - name: 809123645552.dkr.ecr.<REGION>.amazonaws.com/my-app
+    newTag: IMAGE_TAG
