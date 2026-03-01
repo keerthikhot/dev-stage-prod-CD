@@ -8,8 +8,8 @@ resources:
 
 images:
   - name: repo-app
-    newName: 000000000000.dkr.ecr.us-east-1.amazonaws.com/default/repo-app
-    newTag: IMAGE_TAG
+    newName: 809123645552.dkr.ecr.us-east-1.amazonaws.com/default/repo-app
+    newTag: ba11f1af777321b154d8f5ae391703dce922f4b9
 
 patches:
   - target:
