@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: stage
+resources:
+  - ../../base
+  - namespace.yaml
+
+images:
+  - name: repo-app
+    newName: 000000000000.dkr.ecr.us-east-1.amazonaws.com/default/repo-app
+    newTag: IMAGE_TAG
+
+patches:
+  - target:
+      kind: Deployment
+      name: my-app
+    patch: |
+      - op: replace
+        path: /spec/replicas
+        value: 2
